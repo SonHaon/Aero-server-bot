@@ -11,7 +11,7 @@ from io import BytesIO
 from PIL import Image,ImageFont,ImageDraw,ImageOps
 import logging
 import logging.handlers
-import spam
+from Cogs_sommaire import *
 
 TOKEN = "MTA1MDQ1NTMxOTMzNzI0Njc0MA.GgJBO2.Pj6EyPJFbKzq7gOfbCUsAZNRn3QSx8mgsRp-50"
 guild = discord.Object(id=1022844623372165260)

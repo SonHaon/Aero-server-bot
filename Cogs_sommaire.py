@@ -1,0 +1,1 @@
+from Cogs.troll import spam
