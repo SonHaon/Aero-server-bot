@@ -1,10 +1,9 @@
 import asyncio 
 import discord 
 from discord.ext import  commands 
-from discord import  app_commands,ButtonStyle 
+from discord import  app_commands
 from discord.ui import * 
-import random 
-
+from ..checks import check
 
 
 class spam(commands.Cog): 
@@ -12,9 +11,10 @@ class spam(commands.Cog):
         self.bot = bot 
 
     @app_commands.command(name="spam",description="spam quelqu'un")
-    @app_commands.default_permissions(administrator=False)
+    @check.is_modo()
     async def spam(self,interaction:discord.Interaction,user:discord.User,message:str,delai:int,nombre_fois:int,delete:bool):
-        await interaction.response.send_message("spam lancé",ephemeral=True)
+        await interaction.response.defer(ephemeral=True)
+        await interaction.edit_original_response("spam lancé",ephemeral=True)
         if delete:
             delete = 0.001
             delai = 1
