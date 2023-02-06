@@ -17,4 +17,4 @@ class ping(commands.Cog):
     @app_commands.command(name="ping",description="verifie si le bot marche")
     async def ping(self,interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
-        await interaction.edit_original_response(content="pong")
+        await interaction.edit_original_response(content=f"le ping du bot est de {round(self.bot.latency*1000)}ms")
