@@ -13,6 +13,6 @@ class chatgpt(commands.GroupCog, name="chatgpt"):
 
     @app_commands.command(name="ask",description="pose une question a chatgpt")
     async def ask(self, interaction:discord.Interaction,question:str):
-        await interaction.response.defer(ephemeral=True)
-        completion=openai.Completion.create(engine="ada",prompt=question)
+        await interaction.response.defer(ephemeral=False)
+        completion=openai.Completion.create(engine="text-davinci-003",prompt=question)
         await interaction.edit_original_response(content=completion.choices[0].text)
