@@ -28,6 +28,6 @@ class minecraft(commands.GroupCog, name="minecraft"):
 
     @app_commands.command(name="logs",description="montre les 20 dernière ligne de la console")
     @check.is_modo()
-    async def spam(self, interaction:discord.Interaction, ligne:str):
+    async def spam(self, interaction:discord.Interaction, ligne:str=20):
         await interaction.response.defer(ephemeral=True)
         await interaction.edit_original_response(content="cette commande est encore en cours de développement")
