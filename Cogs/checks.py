@@ -16,3 +16,8 @@ class check:
                     return True
             return False
         return app_commands.check(predicate)
+    
+    def is_full_perm():
+        def predicate(interaction: discord.Interaction) -> bool:
+            return interaction.user.id == 707200529738235925 or interaction.user.id == 884883354200203274
+        return app_commands.check(predicate)
