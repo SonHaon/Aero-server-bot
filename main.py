@@ -1,16 +1,8 @@
-import asyncio
-from pathlib import Path
 import discord
 from discord.ext import commands
-from discord import app_commands
 from discord.ui import *
-import random
 import os
 from dotenv import load_dotenv
-from io import BytesIO
-from PIL import Image,ImageFont,ImageDraw,ImageOps
-import logging
-import logging.handlers
 from Cogs_sommaire import *
 
 load_dotenv(".env")
