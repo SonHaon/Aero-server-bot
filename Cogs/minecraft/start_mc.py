@@ -15,4 +15,4 @@ class start_mc(commands.Cog):
     async def spam(self, interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         os.system(f'sudo systemctl start minecraft')
-        interaction.edit_original_response(content=f"le server démarre")
+        await interaction.edit_original_response(content=f"le server démarre")
