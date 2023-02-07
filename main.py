@@ -33,13 +33,16 @@ class aclient(commands.Bot):
         await self.add_cog(mc_commands(bot=self),guild=guild)
         await self.add_cog(logs(bot=self),guild=guild)
         await self.add_cog(start_mc(bot=self),guild=guild)
-        await self.tree.sync(guild=guild)
 
         # commandes moderation :
         await self.add_cog(clear(bot=self),guild=guild)
 
         # commandes troll :
         await self.add_cog(spam(bot=self),guild=guild)
+
+
+        await self.tree.sync(guild=guild)
+
 
 
     async def on_ready(self):
