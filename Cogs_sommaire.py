@@ -5,7 +5,7 @@ from Cogs.autre.ping import ping
 from Cogs.bot.reboot import reboot
 
 # Cogs/chatgpt :
-
+from Cogs.chatgpt.chatgpt import chatgpt
 
 # Cogs/minecraft :
 from Cogs.minecraft.minecraft import minecraft
