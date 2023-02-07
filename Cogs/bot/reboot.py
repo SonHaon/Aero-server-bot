@@ -14,7 +14,7 @@ class reboot(commands.Cog):
         self.bot = bot 
 
     @app_commands.command(name="reboot",description="redémarre le bot et le mets a jour")
-    @check.is_SonHaon()
+    @check.is_full_perm()
     async def reboot(self,interaction:discord.Interaction):
         await self.bot.change_presence(status=discord.Status.offline)
         await interaction.response.send_message("le bot va redémarrer",ephemeral=True)
