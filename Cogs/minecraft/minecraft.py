@@ -12,7 +12,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
 
     @app_commands.command(name="commands",description="execute une commande sur le serveur minecraft")
     @check.is_SonHaon()
-    async def spam(self, interaction:discord.Interaction, commande:str):
+    async def commands(self, interaction:discord.Interaction, commande:str):
         await interaction.response.defer(ephemeral=True)
         os.system(f'echo "{commande}" > /run/minecraft.stdin')
         interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
@@ -20,7 +20,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
 
     @app_commands.command(name="start_mc",description="lance le serveur minecraft")
     @check.is_modo()
-    async def spam(self, interaction:discord.Interaction):
+    async def start_mc(self, interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         os.system(f'sudo systemctl start minecraft')
         await interaction.edit_original_response(content=f"le server démarre")
