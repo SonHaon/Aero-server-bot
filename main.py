@@ -21,8 +21,8 @@ class aclient(commands.Bot):
         # commandes normal :
         await self.add_cog(ping(bot=self),guild=guild)
 
-        # commandes normal :
-
+        # commandes bot :
+        await self.add_cog(reboot(bot=self),guild=guild)
 
         # commandes chatgpt :
 

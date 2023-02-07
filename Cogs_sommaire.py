@@ -2,7 +2,7 @@
 from Cogs.autre.ping import ping
 
 # Cogs/bot :
-
+from Cogs.bot.reboot import reboot
 
 # Cogs/chatgpt :
 
