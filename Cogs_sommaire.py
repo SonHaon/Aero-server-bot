@@ -6,6 +6,7 @@ from Cogs.bot.reboot import reboot
 
 # Cogs/chatgpt :
 from Cogs.chatgpt.chatgpt import chatgpt
+from Cogs.chatgpt.event import on_chatgpt_message
 
 # Cogs/minecraft :
 from Cogs.minecraft.minecraft import minecraft
