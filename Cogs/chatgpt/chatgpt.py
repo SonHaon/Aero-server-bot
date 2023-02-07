@@ -22,5 +22,5 @@ class chatgpt(commands.GroupCog, name="chatgpt"):
     @ask.error
     async def on_error(self, interaction:discord.Interaction, error):
         if isinstance(error,app_commands.CheckFailure):
-            await interaction.response.send_message("Vous ne pouvez pas faire ca ici, \nil faut aller dans <#1069338761772671158>")
+            await interaction.response.send_message("Vous ne pouvez pas faire ca ici, \nil faut aller dans <#1069338761772671158>",ephemeral=True)
 
