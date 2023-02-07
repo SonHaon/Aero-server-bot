@@ -8,6 +8,7 @@ from Cogs.bot.reboot import reboot
 
 
 # Cogs/minecraft :
+from Cogs.minecraft.minecraft import minecraft
 from Cogs.minecraft.mc_commands import mc_commands
 from Cogs.minecraft.logs import logs
 from Cogs.minecraft.start_mc import start_mc

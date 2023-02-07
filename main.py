@@ -28,6 +28,7 @@ class aclient(commands.Bot):
 
 
         # commandes minecraft :
+        await self.add_cog(minecraft(bot=self),guild=guild)
         await self.add_cog(mc_commands(bot=self),guild=guild)
         await self.add_cog(logs(bot=self),guild=guild)
         await self.add_cog(start_mc(bot=self),guild=guild)
