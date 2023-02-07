@@ -12,15 +12,10 @@ class chatgpt(commands.GroupCog, name="chatgpt"):
         self.bot = bot 
         super().__init__()
 
-    @app_commands.command(name="ask",description="pose une question a chatgpt")
-    @check.is_gpt_chan()
-    async def ask(self, interaction:discord.Interaction,question:str):
-        await interaction.response.defer(ephemeral=False)
-        completion=openai.Completion.create(engine="text-davinci-003",prompt=question,max_tokens=2000)
-        await interaction.edit_original_response(content=completion.choices[0].text)
 
-    @ask.error
-    async def on_error(self, interaction:discord.Interaction, error):
-        if isinstance(error,app_commands.CheckFailure):
-            await interaction.response.send_message("Vous ne pouvez pas faire ca ici, \nil faut aller dans <#1069338761772671158>",ephemeral=True)
+    @app_commands.command(name="ask",description="pose une question a chatgpt")
+    async def ask(self, interaction:discord.Interaction,question:str):
+        await interaction.response.defer(ephemeral=True)
+        completion=openai.Completion.create(engine="text-davinci-003",prompt=question,max_tokens=2000-len(question))
+        await interaction.edit_original_response(content=f"*{question}*\n\n{completion.choices[0].text}")
 
