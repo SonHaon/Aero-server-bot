@@ -9,10 +9,7 @@ from Cogs.chatgpt.chatgpt import chatgpt
 from Cogs.chatgpt.event import on_chatgpt_message
 
 # Cogs/minecraft :
-from Cogs.minecraft.minecraft import minecraft
 from Cogs.minecraft.mc_commands import mc_commands
-from Cogs.minecraft.logs import logs
-from Cogs.minecraft.start_mc import start_mc
 
 # Cogs/moderation : 
 from Cogs.moderation.clear import clear
