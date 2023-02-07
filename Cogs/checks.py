@@ -19,5 +19,5 @@ class check:
 
     def is_gpt_chan():
         def predicate(interaction: discord.Interaction) -> bool:
-            return interaction.channel.id == 1069338761772671158 and not interaction.user.bot      
+            return interaction.channel.id == 1069338761772671158 and not(interaction.user.bot)
         return app_commands.check(predicate)
