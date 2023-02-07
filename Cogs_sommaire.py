@@ -10,6 +10,7 @@ from Cogs.autre.ping import ping
 # Cogs/minecraft :
 from Cogs.minecraft.mc_commands import mc_commands
 from Cogs.minecraft.logs import logs
+from Cogs.minecraft.start_mc import start_mc
 
 # Cogs/moderation : 
 from Cogs.moderation.clear import clear
