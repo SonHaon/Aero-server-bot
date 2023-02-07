@@ -17,5 +17,5 @@ class chatgpt(commands.GroupCog, name="chatgpt"):
     async def ask(self, interaction:discord.Interaction,question:str):
         await interaction.response.defer(ephemeral=True)
         completion=openai.Completion.create(engine="text-davinci-003",prompt=question,max_tokens=2000-len(question))
-        await interaction.edit_original_response(content=f"*{question}*\n\n{completion.choices[0].text}")
+        await interaction.edit_original_response(content=f"*{question}*{completion.choices[0].text}")
 
