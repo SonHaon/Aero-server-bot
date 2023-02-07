@@ -15,4 +15,4 @@ class mc_commands(commands.Cog):
     async def spam(self, interaction:discord.Interaction, commande:str):
         await interaction.response.defer(ephemeral=True)
         os.system(f'echo "{commande}" > /run/minecraft.stdin')
-        interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
+        await interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
