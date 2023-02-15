@@ -26,7 +26,7 @@ class aclient(commands.Bot):
 
         # commandes chatgpt :
         await self.add_cog(chatgpt(bot=self),guild=guild)
-        await self.add_cog(on_chatgpt_message(bot=self),guild=guild)
+        #await self.add_cog(on_chatgpt_message(bot=self),guild=guild)
 
         # commandes minecraft :
         await self.add_cog(minecraft(bot=self),guild=guild)
