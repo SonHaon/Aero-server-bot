@@ -38,7 +38,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:rose:1084924591274741771>",
         custom_id="rose",
-        row=0
+        row=1
     )
     async def android(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
@@ -81,6 +81,9 @@ class boutons_auto_role(discord.ui.View):
         virgule = ", "
         roles = []
         for role in user.roles:
-            roles.append(role.mention)
+            if role.id == 1022844623372165260:
+                pass
+            else:
+                roles.append(role.mention)
         roles.reverse()
         await interaction.response.send_message(f"vous avez les roles suivant : {virgule.join(roles)}",ephemeral=True)
