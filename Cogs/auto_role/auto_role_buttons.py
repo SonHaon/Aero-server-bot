@@ -38,7 +38,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:rose:1084924591274741771>",
         custom_id="rose",
-        row=1
+        row=0
     )
     async def android(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
