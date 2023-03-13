@@ -38,7 +38,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:rose:1084924591274741771>",
         custom_id="rose",
-        row=1
+        row=0
     )
     async def android(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
@@ -65,6 +65,15 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:violet:1084924636971675791>",
         custom_id="violet",
+        row=1
+    )
+    async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+        pass
+
+    @discord.ui.button(
+        style=ButtonStyle.grey,
+        emoji="<:marron:1084929867985989703>",
+        custom_id="marron",
         row=1
     )
     async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
