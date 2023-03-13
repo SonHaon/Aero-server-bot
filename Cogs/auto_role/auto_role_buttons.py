@@ -38,7 +38,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:rose:1084924591274741771>",
         custom_id="rose",
-        row=0
+        row=1
     )
     async def android(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
@@ -47,7 +47,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:rouge:1084924751954329660>",
         custom_id="rouge",
-        row=0
+        row=1
     )
     async def infini(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
@@ -56,7 +56,7 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:vert:1084924793016565830>",
         custom_id="vert",
-        row=0
+        row=1
     )
     async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
@@ -65,25 +65,16 @@ class boutons_auto_role(discord.ui.View):
         style=ButtonStyle.grey,
         emoji="<:violet:1084924636971675791>",
         custom_id="violet",
-        row=0
+        row=1
     )
     async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
-        style=ButtonStyle.blurple,
-        label="Voir mes roles",
-        custom_id="voir_role",
-        row=2
+        style=ButtonStyle.grey,
+        emoji="<:marron:1084929867985989703>",
+        custom_id="marron",
+        row=1
     )
-    async def view_role(self,interaction:discord.Interaction,button:discord.ui.Button):
-        user=interaction.user
-        virgule = ", "
-        roles = []
-        for role in user.roles:
-            if role.id == 1022844623372165260:
-                pass
-            else:
-                roles.append(role.mention)
-        roles.reverse()
-        await interaction.response.send_message(f"vous avez les roles suivant : {virgule.join(roles)}",ephemeral=True)
+    async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+        pass
