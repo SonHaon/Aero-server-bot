@@ -18,6 +18,9 @@ class aclient(commands.Bot):
         super().__init__(intents = intents,command_prefix="%µ¨£%£µ%",help_command=None)
         
     async def setup_hook(self):
+        # commandes auto_role :
+        await self.add_cog(set_auto_role(bot=self),guild=guild)        
+
         # commandes normal :
         await self.add_cog(ping(bot=self),guild=guild)
 

@@ -1,3 +1,6 @@
+# Cogs/auto_role :
+from Cogs.auto_role.set_auto_role import set_auto_role
+
 # Cogs/autre :
 from Cogs.autre.ping import ping
 
