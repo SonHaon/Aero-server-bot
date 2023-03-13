@@ -5,7 +5,7 @@ from discord import  app_commands,ButtonStyle
 from discord.ui import * 
 import random 
 
-from auto_role_buttons import *
+from .auto_role_buttons import *
 
 import logging 
 logger = logging.getLogger('discord.artichauds') 
