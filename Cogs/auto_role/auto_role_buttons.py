@@ -45,20 +45,20 @@ class boutons_auto_role(discord.ui.View):
 
     @discord.ui.button(
         style=ButtonStyle.grey,
-        emoji="<:rouge:1084924751954329660>",
-        custom_id="5",
-        row=1
-    )
-    async def infini(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
-
-    @discord.ui.button(
-        style=ButtonStyle.grey,
         emoji="<:vert:1084924793016565830>",
         custom_id="6",
         row=1
     )
     async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+        pass
+
+    @discord.ui.button(
+        style=ButtonStyle.grey,
+        emoji="<:rouge:1084924751954329660>",
+        custom_id="5",
+        row=1
+    )
+    async def infini(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
