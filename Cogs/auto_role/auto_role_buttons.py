@@ -5,9 +5,17 @@ from discord import app_commands,ButtonStyle
 
 
 class boutons_auto_role(discord.ui.View):
-    def __init__(self):
+    def __init__(self,guild:discord.Guild):
         super().__init__(timeout=None)
-        self.role_couleur=[]
+        self.role_couleur=[guild.get_role(1084920603301126236), #bleu
+                           guild.get_role(1084920648268263566), #jaune
+                           guild.get_role(1084920682766409758), #orange
+                           guild.get_role(1084920165554213054), #rose
+                           guild.get_role(1084920710134243450), #rouge
+                           guild.get_role(1084920738953302107), #vert
+                           guild.get_role(1084920504978264095), #violet
+                           guild.get_role(1084929663710797925), #marron
+                          ]
     
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -33,7 +41,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920648268263566)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur jaune vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -45,7 +55,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920682766409758)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur orange vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -57,7 +69,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920165554213054)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur rose vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -69,7 +83,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920710134243450)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur rouge vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -81,7 +97,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920738953302107)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur vert vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -93,7 +111,9 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084920504978264095)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur violet vous a été donné",ephemeral=True)
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -105,4 +125,6 @@ class boutons_auto_role(discord.ui.View):
         for role in interaction.user.roles:
             if role in self.role_couleur:
                 interaction.user.remove_roles(role)
-        interaction.user.add_roles()
+        role = interaction.guild.get_role(1084929663710797925)
+        await interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur violet vous a été donné",ephemeral=True)
