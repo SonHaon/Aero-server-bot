@@ -3,9 +3,11 @@ from discord.ui import view,Button,Select,Modal
 from discord import app_commands,ButtonStyle
 
 
+
 class boutons_auto_role(discord.ui.View):
-    def __init__(self,guild:discord.Guild):
+    def __init__(self):
         super().__init__(timeout=None)
+        self.role_couleur=[]
     
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -14,7 +16,12 @@ class boutons_auto_role(discord.ui.View):
         row=0
     )
     async def bleu(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        role = interaction.guild.get_role(1084920603301126236)
+        interaction.user.add_roles(role)
+        await interaction.response.send_message(f"la couleur {role.mention}bleu vous a été donné")
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -23,7 +30,10 @@ class boutons_auto_role(discord.ui.View):
         row=0
     )
     async def jaune(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -32,7 +42,10 @@ class boutons_auto_role(discord.ui.View):
         row=0
     )
     async def orange(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -41,7 +54,10 @@ class boutons_auto_role(discord.ui.View):
         row=0
     )
     async def rose(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -50,7 +66,10 @@ class boutons_auto_role(discord.ui.View):
         row=1
     )
     async def rouge(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -59,7 +78,10 @@ class boutons_auto_role(discord.ui.View):
         row=1
     )
     async def vert(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -68,7 +90,10 @@ class boutons_auto_role(discord.ui.View):
         row=1
     )
     async def violet(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
 
     @discord.ui.button(
         style=ButtonStyle.grey,
@@ -77,4 +102,7 @@ class boutons_auto_role(discord.ui.View):
         row=1
     )
     async def marron(self,interaction:discord.Interaction,button:discord.ui.Button):
-        pass
+        for role in interaction.user.roles:
+            if role in self.role_couleur:
+                interaction.user.remove_roles(role)
+        interaction.user.add_roles()
