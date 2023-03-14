@@ -18,5 +18,5 @@ class set_auto_role(commands.Cog):
     async def set_auto_role(self,interaction:discord.Interaction):
         embed = discord.Embed(title = "choisissez une couleur")
         embed.set_footer(text = f"{interaction.guild.name}", icon_url=interaction.guild.icon.url)
-        await interaction.channel.send(embed=embed,view=boutons_auto_role(interaction.guild))
+        await interaction.channel.send(embed=embed,view=boutons_auto_role())
         await interaction.response.send_message("l'auto role à bien été créer",ephemeral=True)
