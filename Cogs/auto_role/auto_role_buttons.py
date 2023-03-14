@@ -13,7 +13,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="1",
         row=0
     )
-    async def duo(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def bleu(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -22,7 +22,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="2",
         row=0
     )
-    async def duel(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def jaune(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -31,7 +31,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="3",
         row=0
     )
-    async def ios(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def orange(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -40,7 +40,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="4",
         row=0
     )
-    async def android(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def rose(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -49,7 +49,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="5",
         row=1
     )
-    async def infini(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def rouge(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -58,7 +58,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="6",
         row=1
     )
-    async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def vert(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -67,7 +67,7 @@ class boutons_auto_role(discord.ui.View):
         custom_id="7",
         row=1
     )
-    async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def violet(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
 
     @discord.ui.button(
@@ -76,5 +76,5 @@ class boutons_auto_role(discord.ui.View):
         custom_id="8",
         row=1
     )
-    async def alors(self,interaction:discord.Interaction,button:discord.ui.Button):
+    async def marron(self,interaction:discord.Interaction,button:discord.ui.Button):
         pass
