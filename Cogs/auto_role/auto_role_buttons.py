@@ -127,4 +127,4 @@ class boutons_auto_role(discord.ui.View):
                 await interaction.user.remove_roles(role)
         role = interaction.guild.get_role(1084929663710797925)
         await interaction.user.add_roles(role)
-        await interaction.response.send_message(f"la couleur violet vous a été donné",ephemeral=True)
+        await interaction.response.send_message(f"la couleur marron vous a été donné",ephemeral=True)
