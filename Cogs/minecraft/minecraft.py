@@ -14,8 +14,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
     @check.is_SonHaon()
     async def commands(self, interaction:discord.Interaction, commande:str):
         await interaction.response.defer(ephemeral=True)
-        os.system(f'echo "{commande}" > /run/minecraft.stdin')
-        await interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
+        await interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé\n{os.popen(f'echo "{commande}" > /run/minecraft.stdin').read()}")
 
 
     @app_commands.command(name="start_mc",description="lance le serveur minecraft")
