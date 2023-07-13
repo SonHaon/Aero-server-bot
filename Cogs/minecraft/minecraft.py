@@ -25,15 +25,15 @@ class minecraft(commands.GroupCog, name="minecraft"):
         await interaction.edit_original_response(content=f"le server démarre")
 
 
-    @app_commands.command(name="logs",description="montre les 20 dernière ligne de la console")
+    @app_commands.command(name="logs",description="montre les dernière ligne de la console")
     @check.is_modo()
-    async def spam(self, interaction:discord.Interaction, ligne:int=20):
+    async def spam(self, interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
             lines = file.readlines()
         lines.reverse()
         log=[]
-        for i in range(ligne):
+        for i in range(100):
             log.append(lines[i])
             if "".join(log).count("") >= 2000:
                 log.pop()
