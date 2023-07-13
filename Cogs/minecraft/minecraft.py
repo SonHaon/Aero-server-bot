@@ -38,6 +38,6 @@ class minecraft(commands.GroupCog, name="minecraft"):
             if "".join(log).count("") >= 2000:
                 log.pop()
                 break
-        await interaction.edit_original_response(content=f"```{''.join(log)}```",file=file)
+        await interaction.edit_original_response(content=f"```{''.join(log)}```")
 
         
