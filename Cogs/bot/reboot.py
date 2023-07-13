@@ -17,6 +17,7 @@ class reboot(commands.Cog):
     @check.is_full_perm()
     async def reboot(self,interaction:discord.Interaction):
         await self.bot.change_presence(status=discord.Status.offline)
-        await interaction.response.send_message("le bot va redémarrer",ephemeral=True)
         os.system("sudo systemctl restart Aero-server-bot")
+        await interaction.response.send_message("le bot va redémarrer",ephemeral=True)
+        
         
