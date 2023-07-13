@@ -35,9 +35,9 @@ class minecraft(commands.GroupCog, name="minecraft"):
         log=[]
         for i in range(100):
             log.append(lines[i])
-            if "".join(log).count("") >= 4096:
+            if "".join(log).count("") >= 2048:
                 log.pop()
                 break
-        embed = discord.Embed(description=f"```{''.join(log)}```")
-        await interaction.edit_original_response(embed=embed)
+        await interaction.edit_original_response(content=f"```{''.join(log)}```")
 
+        
