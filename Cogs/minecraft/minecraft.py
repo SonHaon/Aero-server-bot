@@ -29,9 +29,10 @@ class minecraft(commands.GroupCog, name="minecraft"):
     @check.is_modo()
     async def spam(self, interaction:discord.Interaction, ligne:int=20):
         await interaction.response.defer(ephemeral=True)
-        await interaction.edit_original_response(content="cette commande est encore en cours de développement")
         with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
             lines = file.readlines()
         lines.reverse()
+        log=[]
         for i in range(20):
-            print(lines[i])
+            log.append(lines[i])
+        await interaction.edit_original_response(content="\n".join(log))
