@@ -33,6 +33,6 @@ class minecraft(commands.GroupCog, name="minecraft"):
             lines = file.readlines()
         lines.reverse()
         log=[]
-        for i in range(20):
+        for i in range(ligne):
             log.append(lines[i])
-        await interaction.edit_original_response(content="\n".join(log))
+        await interaction.edit_original_response(content=f"```{''.join(log)}```")
