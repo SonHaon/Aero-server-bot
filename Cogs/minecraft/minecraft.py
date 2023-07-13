@@ -15,7 +15,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
     async def commands(self, interaction:discord.Interaction, commande:str):
         await interaction.response.defer(ephemeral=True)
         os.system(f'echo "{commande}" > /run/minecraft.stdin')
-        interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
+        await interaction.edit_original_response(content=f"la commandes `{commande}` à bien été executé")
 
 
     @app_commands.command(name="start_mc",description="lance le serveur minecraft")
