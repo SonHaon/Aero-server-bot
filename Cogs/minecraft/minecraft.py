@@ -30,3 +30,4 @@ class minecraft(commands.GroupCog, name="minecraft"):
     async def spam(self, interaction:discord.Interaction, ligne:int=20):
         await interaction.response.defer(ephemeral=True)
         await interaction.edit_original_response(content="cette commande est encore en cours de développement")
+        print(os.popen("sudo journalctl -u minecraft -f").read())
