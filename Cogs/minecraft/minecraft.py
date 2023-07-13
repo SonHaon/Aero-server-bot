@@ -35,7 +35,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
         log=[]
         for i in range(100):
             log.append(lines[i])
-            if "".join(log).count("") >= 2048:
+            if "".join(log).count("") >= 2000:
                 log.pop()
                 break
         await interaction.edit_original_response(content=f"```{''.join(log)}```")
