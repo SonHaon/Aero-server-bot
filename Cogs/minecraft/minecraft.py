@@ -30,7 +30,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
     async def spam(self, interaction:discord.Interaction, ligne:int=20):
         await interaction.response.defer(ephemeral=True)
         await interaction.edit_original_response(content="cette commande est encore en cours de développement")
-        with open("/home/sonhaon/logs/latest/log","r",encoding="utf8") as file:
+        with open("/home/sonhaon/logs/latest.log","r",encoding="utf8") as file:
             lines = file.readlines()
         lines.reverse()
         for i in range(20):
