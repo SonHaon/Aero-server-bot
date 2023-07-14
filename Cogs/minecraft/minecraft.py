@@ -39,7 +39,6 @@ class minecraft(commands.GroupCog, name="minecraft"):
         await interaction.response.defer(ephemeral=True)
         with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
             lines = file.readlines()
-        lines.reverse()
         log=[]
         for i in range(100):
             log.append(lines[i])
