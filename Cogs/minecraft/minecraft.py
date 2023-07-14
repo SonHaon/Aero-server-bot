@@ -27,7 +27,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
 
     @app_commands.command(name="restart",description="relance le serveur minecraft")
     @check.is_modo()
-    async def start_mc(self, interaction:discord.Interaction):
+    async def restart_mc(self, interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         os.system(f'sudo systemctl restart minecraft')
         await interaction.edit_original_response(content=f"le server redémarre")
@@ -35,7 +35,7 @@ class minecraft(commands.GroupCog, name="minecraft"):
 
     @app_commands.command(name="logs",description="montre les dernière ligne de la console")
     @check.is_modo()
-    async def spam(self, interaction:discord.Interaction):
+    async def logs(self, interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
             lines = file.readlines()
