@@ -6,6 +6,7 @@ from Cogs.autre.ping import ping
 
 # Cogs/bot :
 from Cogs.bot.reboot import reboot
+from Cogs.bot.terminal import raspberry
 
 # Cogs/chatgpt :
 from Cogs.chatgpt.chatgpt import chatgpt
