@@ -14,7 +14,7 @@ class raspberry(commands.GroupCog, name="raspberry"):
     @check.is_SonHaon()
     async def commands(self, interaction:discord.Interaction, commande:str):
         await interaction.response.defer(ephemeral=True)
-        await interaction.edit_original_response(content=f"```sonhaon@raspberrypi:/$ {commande}\n{os.popen(commande)}```")
+        await interaction.edit_original_response(content=f"```sonhaon@raspberrypi:/$ {commande}\n{os.popen(commande).read()}```")
 
 
 #    @app_commands.command(name="start",description="lance le serveur minecraft")
