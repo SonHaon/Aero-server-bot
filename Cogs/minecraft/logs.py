@@ -11,19 +11,20 @@ class logs(commands.Cog):
 
     @commands.Cog.listener(name="on_message")
     async def logs(self, message:discord.Message):
-        if message.channel.id == 1050457771537080410 and (message.content.lower().startswith("log") or message.content.lower().startswith("logs")):
-            if message.content.endswith("file"):
-                await message.channel.send(file=discord.File(r"/home/sonhaon/minecraft/logs/latest.log"))
-            else:
-                with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
-                    lines = file.readlines()
-                lines.reverse()
-                log=[]
-                for i in range(100):
-                    log.append(lines[i])
-                    if "".join(log).count("") >= 2000:
-                        log.pop()
-                        break
-                log.reverse()
-                await message.channel.send(content=f"```{''.join(log)}```")    
-            await message.delete()
+        if message.channel.id == 1050457771537080410:
+            if (message.content.lower().startswith("log") or message.content.lower().startswith("logs")):
+                if message.content.endswith("file"):
+                    await message.channel.send(file=discord.File(r"/home/sonhaon/minecraft/logs/latest.log"),delete_after=60)
+                else:
+                    with open("/home/sonhaon/minecraft/logs/latest.log","r",encoding="utf8") as file:
+                        lines = file.readlines()
+                    lines.reverse()
+                    log=[]
+                    for i in range(100):
+                        log.append(lines[i])
+                        if "".join(log).count("") >= 2000:
+                            log.pop()
+                            break
+                    log.reverse()
+                    await message.channel.send(content=f"```{''.join(log)}```")
+                await message.delete()
