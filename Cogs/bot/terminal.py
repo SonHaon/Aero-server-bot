@@ -23,5 +23,3 @@ class raspberry(commands.GroupCog, name="raspberry"):
 #        await interaction.response.defer(ephemeral=True)
 #        os.system(f'sudo systemctl start minecraft')
 #        await interaction.edit_original_response(content=f"le server démarre")
-
-        
