@@ -47,6 +47,6 @@ class minecraft(commands.GroupCog, name="minecraft"):
                 log.pop()
                 break
         log.reverse()
-        await interaction.edit_original_response(content=f"```{''.join(log)}```", file =discord.File(r"/home/sonhaon/minecaft/logs/latest.log"))
+        await interaction.edit_original_response(content=f"```{''.join(log)}```", file =discord.File(r"/home/sonhaon/minecraft/logs/latest.log"))
 
         
