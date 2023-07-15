@@ -26,4 +26,4 @@ class logs(commands.Cog):
                         break
                 log.reverse()
                 await message.channel.send(content=f"```{''.join(log)}```")    
-            await message.delete      
+            await message.delete()
