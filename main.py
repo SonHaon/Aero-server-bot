@@ -33,6 +33,7 @@ class aclient(commands.Bot):
 
         # commandes minecraft :
         await self.add_cog(minecraft(bot=self),guild=guild)
+        await self.add_cog(logs(bot=self),guild=guild)
 
         # commandes moderation :
         await self.add_cog(clear(bot=self),guild=guild)

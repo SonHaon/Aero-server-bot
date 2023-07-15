@@ -13,6 +13,7 @@ from Cogs.chatgpt.event import on_chatgpt_message
 
 # Cogs/minecraft :
 from Cogs.minecraft.minecraft import minecraft
+from Cogs.minecraft.logs import logs
 
 # Cogs/moderation : 
 from Cogs.moderation.clear import clear
