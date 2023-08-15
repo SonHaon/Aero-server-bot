@@ -78,7 +78,7 @@ class manga(commands.Cog):
         app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
         app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
     ])
-    async def manga(self,interaction:discord.Interaction,manga:str,chapitre:int):
+    async def manga(self,interaction:discord.Interaction,manga:str,chapitre:str):
         await interaction.response.defer(ephemeral=True)
         file_create(manga,chapitre)
         scrap(manga,chapitre)
