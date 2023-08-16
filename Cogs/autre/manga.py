@@ -35,7 +35,7 @@ def file_create(manga,chap):
         os.mkdir(f"cbz/{manga}")
 
 def scrap(manga,chap):
-    for i in range(100):
+    for i in range(1000):
         reponse = get(url=f"https://lelscanvf.cc/manga/{manga}/{chap}/{i+1}")
         if reponse.status_code == 404:
             print("manga introuvable")
