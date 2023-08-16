@@ -45,6 +45,7 @@ class aclient(commands.Bot):
 
 
         await self.tree.sync(guild=guild)
+        await self.tree.sync()
 
 
 
