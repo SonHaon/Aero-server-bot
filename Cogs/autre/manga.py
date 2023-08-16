@@ -87,7 +87,8 @@ class manga(commands.Cog):
             print("cbz créé")
             file=discord.File(f"cbz/{manga}/{chap}.cbz")
             supprime(nb_image,manga,chap)
+            await interaction.edit_original_response(content=f"je te l'ai télécharger, le voila",attachments=[file])
         else:
             file=discord.File(f"cbz/{manga}/{chap}.cbz")
-        await interaction.edit_original_response(content=f"voila le chapitre",attachments=[file])
+            await interaction.edit_original_response(content=f"je l'avait déjà, le voila",attachments=[file])
         
