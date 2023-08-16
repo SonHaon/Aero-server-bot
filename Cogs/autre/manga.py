@@ -72,22 +72,31 @@ def supprime(nb_image,manga,chap):
     for i in range(nb_image):
         os.remove(f"img/{manga}/{chap}/{i+1}.jpg")
 
+manga_list = ["One Piece","Naruto","Dragon ball Super","My Hero Academia",]
 
 class manga(commands.Cog):
     def __init__(self,bot:commands.Bot) -> None:
         self.bot = bot
 
-    
+    async def manga_autocompletion(interaction:discord.Interaction,current:str):
+        data=[]
+        for manga in manga_list:
+            if current.lower() in manga.lower():
+                data.append(app_commands.Choice(name=f"One Piece",value="one-piece"))
+        return data
+
+
     @app_commands.command(name="manga_scan",description="envoie un fichier du chapitre du manga voulu")
-    @app_commands.choices(manga= [
-        app_commands.Choice(name=f"One Piece",value="one-piece"),
-        app_commands.Choice(name="Naruto",value="naruto"),
-        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
-        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
-    ])
+#    @app_commands.choices(manga= [
+#        app_commands.Choice(name=f"One Piece",value="one-piece"),
+#        app_commands.Choice(name="Naruto",value="naruto"),
+#        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
+#        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
+#    ])
+    @app_commands.autocomplete(manga=manga_autocompletion)
     @app_commands.rename(chap="chapitre")
     async def manga(self,interaction:discord.Interaction,manga:str,chap:str):
-        manga="-".join(manga.split(" "))
+        manga="-".join(manga.split(" ")).lower()
         await interaction.response.defer(ephemeral=True)
         if not os.path.exists(f"cbz/{manga}/{chap}.cbz"):
             if not manga_exist(manga):
