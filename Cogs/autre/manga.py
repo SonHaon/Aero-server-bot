@@ -45,9 +45,9 @@ def scrap(manga,chap):
 
 def compresse(manga,chap,nb_image):
     for i in range(100):
-        im1 = Image.open(f"C:\\Users\\Noah\\Documents\\python\\scan_scrap\\img\\{manga}\\{chap}\\{i+1}.jpg")
+        im1 = Image.open(f"img\\{manga}\\{chap}\\{i+1}.jpg")
         im1 = im1.convert("RGB")
-        im1.save(f"C:\\Users\\Noah\\Documents\\python\\scan_scrap\\img\\{manga}\\{chap}\\{i+1}.jpg",format="JPEG",optimize=True,quality=10)
+        im1.save(f"img\\{manga}\\{chap}\\{i+1}.jpg",format="JPEG",optimize=True,quality=10)
         im1.close()
 
 def create_cbz(manga,chap):
