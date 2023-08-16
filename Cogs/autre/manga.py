@@ -115,6 +115,7 @@ class manga(commands.Cog):
                 await interaction.edit_original_response(content=f"<a:loading:1141362851206922300> Veuillez patienter le temps du téléchargement <a:loading:1141362851206922300>")
                 file_create(manga,chap)
                 nb_image=scrap(manga,chap)
+                await interaction.edit_original_response(content=f"<a:loading:1141362851206922300> Je l'ai téléchargé, je te fais un beau petit fichier et je te l'envoie <a:loading:1141362851206922300>")
                 compresse(manga,chap,nb_image)
                 create_cbz(manga,chap)
                 file=discord.File(f"cbz/{manga}/{chap}.cbz")
