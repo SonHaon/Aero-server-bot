@@ -108,9 +108,9 @@ class manga(commands.Cog):
         await interaction.response.defer(ephemeral=True)
         if not os.path.exists(f"cbz/{manga}/{chap}.cbz"):
             if not manga_exist(manga):
-                await interaction.edit_original_response(content=f"Je ne trouve pas ce manga")
+                await interaction.edit_original_response(content=f"Désolé, je ne trouve pas ce manga, soit tu t'es trompé dans le nom soit il n'est pas disponible sur le site où je télécharge mes mangas")
             elif not chap_exist(manga,chap):
-                await interaction.edit_original_response(content=f"Je ne trouve pas ce chapitre")
+                await interaction.edit_original_response(content=f"Désolé, je ne trouve pas ce chapitre. soit il n'est pas encore sorti soit il n'est pas encore disponible sur le site où je télécharge mes chapitres")
             else:
                 await interaction.edit_original_response(content=f"<a:loading:1141362851206922300> Veuillez patienter le temps du téléchargement <a:loading:1141362851206922300>")
                 file_create(manga,chap)
