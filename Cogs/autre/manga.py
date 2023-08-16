@@ -79,12 +79,12 @@ class manga(commands.Cog):
 
     
     @app_commands.command(name="manga_scan",description="envoie un fichier du chapitre du manga voulu")
-#    @app_commands.choices(manga= [
-#        app_commands.Choice(name=f"One Piece",value="one-piece"),
-#        app_commands.Choice(name="Naruto",value="naruto"),
-#        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
-#        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
-#    ])
+    @app_commands.autocomplete(manga= [
+        app_commands.Choice(name=f"One Piece",value="one-piece"),
+        app_commands.Choice(name="Naruto",value="naruto"),
+        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
+        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
+    ])
     @app_commands.rename(chap="chapitre")
     async def manga(self,interaction:discord.Interaction,manga:str,chap:str):
         manga="-".join(manga.split(" "))
