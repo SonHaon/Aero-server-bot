@@ -8,6 +8,7 @@ import os
 import shutil
 import os
 from PIL import Image
+import typing
 
 def manga_exist(manga):
     if get(f"https://lelscanvf.cc/manga/{manga}").status_code != 200:
@@ -78,7 +79,7 @@ class manga(commands.Cog):
     def __init__(self,bot:commands.Bot) -> None:
         self.bot = bot
 
-    async def manga_autocompletion(interaction:discord.Interaction,current:str):
+    async def manga_autocompletion(interaction:discord.Interaction,current:str) -> typing.List[app_commands.Choice[str]]:
         data=[]
         for manga in manga_list:
             if current.lower() in manga.lower():
