@@ -91,9 +91,9 @@ class manga(commands.Cog):
         await interaction.response.defer(ephemeral=True)
         if not os.path.exists(f"cbz/{manga}/{chap}.cbz"):
             if not manga_exist(manga):
-                print("ce manga est introuvable")
+                await interaction.edit_original_response(content=f"Je ne trouve pas ce manga")
             elif not chap_exist(manga,chap):
-                print("ce chapitre est indisponible")
+                await interaction.edit_original_response(content=f"Je ne trouve pas ce chapitre")
             else:
                 file_create(manga,chap)
                 nb_image=scrap(manga,chap)
