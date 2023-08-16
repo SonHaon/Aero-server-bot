@@ -112,6 +112,7 @@ class manga(commands.Cog):
             elif not chap_exist(manga,chap):
                 await interaction.edit_original_response(content=f"Je ne trouve pas ce chapitre")
             else:
+                await interaction.edit_original_response(content=f"<a:loading:1141362851206922300> Veuillez patienter le temps du téléchargement <a:loading:1141362851206922300>")
                 file_create(manga,chap)
                 nb_image=scrap(manga,chap)
                 compresse(manga,chap,nb_image)
