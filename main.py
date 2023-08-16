@@ -22,12 +22,13 @@ class aclient(commands.Bot):
         await self.add_cog(set_auto_role(bot=self),guild=guild)        
 
         # commandes normal :
-        await self.add_cog(ping(bot=self),guild=guild)
+        await self.add_cog(ping(bot=self))
         await self.add_cog(manga(bot=self))
+        await self.add_cog(dm(bot=self))
 
         # commandes bot :
         await self.add_cog(reboot(bot=self))
-        await self.add_cog(raspberry(bot=self),guild=guild)
+        await self.add_cog(raspberry(bot=self))
 
         # commandes chatgpt :
         await self.add_cog(chatgpt(bot=self),guild=guild)
@@ -38,7 +39,7 @@ class aclient(commands.Bot):
         await self.add_cog(logs(bot=self),guild=guild)
 
         # commandes moderation :
-        await self.add_cog(clear(bot=self),guild=guild)
+        await self.add_cog(clear(bot=self))
 
         # commandes troll :
         await self.add_cog(spam(bot=self),guild=guild)
