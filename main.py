@@ -26,7 +26,7 @@ class aclient(commands.Bot):
         await self.add_cog(manga(bot=self))
 
         # commandes bot :
-        await self.add_cog(reboot(bot=self),guild=guild)
+        await self.add_cog(reboot(bot=self))
         await self.add_cog(raspberry(bot=self),guild=guild)
 
         # commandes chatgpt :
