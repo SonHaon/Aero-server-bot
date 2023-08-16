@@ -76,7 +76,7 @@ def supprime(nb_image,manga,chap):
     for i in range(nb_image):
         os.remove(f"img/{manga}/{chap}/{i+1}.jpg")
 
-manga_list = ["One Piece","Naruto","Dragon ball Super","My Hero Academia",]
+manga_list = ["One Piece","Naruto","Dragon ball Super","My Hero Academia","Black Clover","Jujutsu Kaisen","One Punch Man","Eden's Zero","Mashle","Solo Leveling","Boruto"]
 
 class manga(commands.Cog):
     def __init__(self,bot:commands.Bot) -> None:
@@ -90,7 +90,7 @@ class manga(commands.Cog):
         data=[]
         for manga in manga_list:
             if current.lower() in manga.lower():
-                data.append(app_commands.Choice(name=manga,value=manga))
+                data.append(app_commands.Choice(name=manga,value=manga.replace("'","")))
         return data
 
 
