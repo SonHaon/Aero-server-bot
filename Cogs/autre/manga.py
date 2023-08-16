@@ -80,6 +80,7 @@ class manga(commands.Cog):
         self.bot = bot
 
     async def manga_autocompletion(
+        self,
         interaction:discord.Interaction,
         current:str
     ) -> typing.List[app_commands.Choice[str]]:
