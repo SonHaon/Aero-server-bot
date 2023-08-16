@@ -44,7 +44,7 @@ def scrap(manga,chap):
             return i      
 
 def compresse(manga,chap,nb_image):
-    for i in range(100):
+    for i in range(nb_image):
         im1 = Image.open(f"/home/sonhaon/Aero-server-bot/img/{manga}/{chap}/{i+1}.jpg")
         im1 = im1.convert("RGB")
         im1.save(f"/home/sonhaon/Aero-server-bot/img/{manga}/{chap}/{i+1}.jpg",format="JPEG",optimize=True,quality=10)
