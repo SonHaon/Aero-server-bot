@@ -79,7 +79,7 @@ class manga(commands.Cog):
 
     
     @app_commands.command(name="manga_scan",description="envoie un fichier du chapitre du manga voulu")
-    @app_commands.autocomplete(manga= [
+    @app_commands.choices(manga= [
         app_commands.Choice(name=f"One Piece",value="one-piece"),
         app_commands.Choice(name="Naruto",value="naruto"),
         app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
