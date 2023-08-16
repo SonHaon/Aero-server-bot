@@ -9,6 +9,18 @@ import shutil
 import os
 from PIL import Image
 
+def manga_exist(manga):
+    if get(f"https://lelscanvf.cc/manga/{manga}").status_code != 200:
+        return False
+    else:
+        return True
+    
+def chap_exist(manga,chap):
+    if get(f"https://lelscanvf.cc/manga/{manga}/{chap}").status_code != 200:
+        return False
+    else:
+        return True
+
 def file_create(manga,chap):
     if not os.path.exists("img"):
         os.mkdir("img")
@@ -67,27 +79,29 @@ class manga(commands.Cog):
 
     
     @app_commands.command(name="manga_scan",description="envoie un fichier du chapitre du manga voulu")
-    @app_commands.choices(manga= [
-        app_commands.Choice(name=f"One Piece",value="one-piece"),
-        app_commands.Choice(name="Naruto",value="naruto"),
-        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
-        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
-    ])
+#    @app_commands.choices(manga= [
+#        app_commands.Choice(name=f"One Piece",value="one-piece"),
+#        app_commands.Choice(name="Naruto",value="naruto"),
+#        app_commands.Choice(name="Dragon ball Super",value="dragon-ball-super"),
+#        app_commands.Choice(name="My Hero Academia",value="my-hero-academia")
+#    ])
     @app_commands.rename(chap="chapitre")
     async def manga(self,interaction:discord.Interaction,manga:str,chap:str):
+        manga="-".join(manga.split(" "))
         await interaction.response.defer(ephemeral=True)
         if not os.path.exists(f"cbz/{manga}/{chap}.cbz"):
-            file_create(manga,chap)
-            print("fichier créé")
-            nb_image=scrap(manga,chap)
-            print("image récupéré")
-            compresse(manga,chap,nb_image)
-            print("image compressé")
-            create_cbz(manga,chap)
-            print("cbz créé")
-            file=discord.File(f"cbz/{manga}/{chap}.cbz")
-            supprime(nb_image,manga,chap)
-            await interaction.edit_original_response(content=f"je te l'ai télécharger, le voila",attachments=[file])
+            if not manga_exist(manga):
+                print("ce manga est introuvable")
+            elif not chap_exist(manga,chap):
+                print("ce chapitre est indisponible")
+            else:
+                file_create(manga,chap)
+                nb_image=scrap(manga,chap)
+                compresse(manga,chap,nb_image)
+                create_cbz(manga,chap)
+                file=discord.File(f"cbz/{manga}/{chap}.cbz")
+                supprime(nb_image,manga,chap)
+                await interaction.edit_original_response(content=f"je te l'ai télécharger, le voila",attachments=[file])
         else:
             file=discord.File(f"cbz/{manga}/{chap}.cbz")
             await interaction.edit_original_response(content=f"je l'avait déjà, le voila",attachments=[file])
