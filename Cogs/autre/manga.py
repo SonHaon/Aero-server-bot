@@ -87,7 +87,7 @@ class manga(commands.Cog):
         data=[]
         for manga in manga_list:
             if current.lower() in manga.lower():
-                data.append(app_commands.Choice(name=f"One Piece",value="one-piece"))
+                data.append(app_commands.Choice(name=manga,value=manga))
         return data
 
 
