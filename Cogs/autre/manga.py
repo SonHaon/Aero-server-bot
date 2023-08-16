@@ -46,8 +46,8 @@ def scrap(manga,chap):
         for image in images:
             name: str = image.extract()
             if name.find(chap)!=-1:
-                if name.startswith("https"):
-                    pass
+                if name.startswith(" https"):
+                    name = f"h{name.removeprefix(' h').removesuffix('g ')}g"
                 else:
                     name=f"https://{name.removeprefix(' //').removesuffix('g ')}g"
                 test=get(name)
