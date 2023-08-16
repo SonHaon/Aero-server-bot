@@ -56,7 +56,7 @@ def create_cbz(manga,chap):
         os.remove(f"cbz/{manga}/{chap}.cbz")
     os.rename(f"img/{manga}/{chap}.zip",f"cbz/{manga}/{chap}.cbz")
 
-def supprime(manga,chap,nb_image):
+def supprime(nb_image,manga,chap):
     for i in range(nb_image):
         os.remove(f"img/{manga}/{chap}/{i+1}.jpg")
 
