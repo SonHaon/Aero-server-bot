@@ -79,7 +79,10 @@ class manga(commands.Cog):
     def __init__(self,bot:commands.Bot) -> None:
         self.bot = bot
 
-    async def manga_autocompletion(interaction:discord.Interaction,current:str) -> typing.List[app_commands.Choice[str]]:
+    async def manga_autocompletion(
+        interaction:discord.Interaction,
+        current:str
+    ) -> typing.List[app_commands.Choice[str]]:
         data=[]
         for manga in manga_list:
             if current.lower() in manga.lower():
