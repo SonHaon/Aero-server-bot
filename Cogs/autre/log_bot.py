@@ -14,5 +14,5 @@ class log_bot(commands.Cog):
     @check.is_SonHaon()
     async def log_bot(self,interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
-        message=os.popen("ping 192.168.1.34").read()
+        message=os.popen("pwd").read()
         await interaction.edit_original_response(content=message)
