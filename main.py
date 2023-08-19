@@ -25,6 +25,7 @@ class aclient(commands.Bot):
         await self.add_cog(ping(bot=self))
         await self.add_cog(manga(bot=self))
         await self.add_cog(dm(bot=self))
+        await self.add_cog(log_bot(bot=self))
 
         # commandes bot :
         await self.add_cog(reboot(bot=self))
