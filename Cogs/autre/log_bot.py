@@ -14,5 +14,5 @@ class log_bot(commands.Cog):
     @check.is_SonHaon()
     async def log_bot(self,interaction:discord.Interaction):
         await interaction.response.defer(ephemeral=True)
-        message=os.popen("pwd").read()
+        message=os.popen("sudo journalctl -u Aero-server-bot.service -f").read()
         await interaction.edit_original_response(content=message)
