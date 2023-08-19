@@ -5,7 +5,6 @@ from Cogs.auto_role.set_auto_role import set_auto_role
 from Cogs.autre.ping import ping
 from Cogs.autre.manga import manga
 from Cogs.autre.dm import dm
-from Cogs.autre.log_bot import log_bot
 
 # Cogs/bot :
 from Cogs.bot.reboot import reboot
